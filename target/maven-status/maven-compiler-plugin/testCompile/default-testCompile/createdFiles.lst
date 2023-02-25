@@ -16,7 +16,6 @@ Selenium\Class4.class
 Selenium\Flipkart.class
 Selenium\DragandDrop.class
 CoreJava\MethodsDemo1.class
-Data\data.json
 Selenium\UpdatedDropdown.class
 TestCases\Listeners.class
 PageObjects\OrdersPage.class
@@ -32,7 +31,6 @@ CoreJava\Arraylist2.class
 Selenium\Locators2.class
 Selenium\Sum1.class
 Selenium\Dataprovide.class
-Resources\globaldata.properties
 CoreJava\Array5.class
 Selenium\Brokenlinks1.class
 PageObjects\LoginPage.class

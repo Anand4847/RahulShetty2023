@@ -1,4 +1,28 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 58.367 sec - in TestSuite
+Tests run: 6, Failures: 4, Errors: 0, Skipped: 2, Time elapsed: 6.89 sec <<< FAILURE! - in TestSuite
+launchapplication(TestCases.Framework)  Time elapsed: 5.841 sec  <<< FAILURE!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: Expected browser binary location, but unable to find binary in default location, no 'moz:firefoxOptions.binary' capability provided, and no binary flag set on the command line 
+Host info: host: 'ADMIN-PC', ip: '192.168.1.102'
+Build info: version: '4.8.0', revision: '267030adea'
+System info: os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '11.0.9'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, moz:debuggerAddress: true, moz:firefoxOptions: {}}], desiredCapabilities=Capabilities {acceptInsecureCerts: true, browserName: firefox, moz:debuggerAddress: true, moz:firefoxOptions: {}}}]
+
+tearDown(TestCases.Framework)  Time elapsed: 5.843 sec  <<< FAILURE!
+java.lang.NullPointerException
+
+launchapplication(TestCases.Framework)  Time elapsed: 6.505 sec  <<< FAILURE!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: Expected browser binary location, but unable to find binary in default location, no 'moz:firefoxOptions.binary' capability provided, and no binary flag set on the command line 
+Host info: host: 'ADMIN-PC', ip: '192.168.1.102'
+Build info: version: '4.8.0', revision: '267030adea'
+System info: os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '11.0.9'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, moz:debuggerAddress: true, moz:firefoxOptions: {}}], desiredCapabilities=Capabilities {acceptInsecureCerts: true, browserName: firefox, moz:debuggerAddress: true, moz:firefoxOptions: {}}}]
+
+tearDown(TestCases.Framework)  Time elapsed: 6.506 sec  <<< FAILURE!
+java.lang.NullPointerException
+

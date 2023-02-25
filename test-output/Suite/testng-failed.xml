@@ -10,7 +10,7 @@
         <methods>
           <include name="tearDown"/>
           <include name="extentreport"/>
-          <include name="submitorder"/>
+          <include name="submitorder" invocation-numbers="1"/>
           <include name="launchapplication"/>
         </methods>
       </class> <!-- TestCases.Framework -->
