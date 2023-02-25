@@ -13,6 +13,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -49,12 +50,12 @@ public class BaseClass {
 				System.getProperty("user.dir") + "\\src\\test\\java\\Resources\\globaldata.properties");
 		prop.load(fis);
 
-		String browsername = System.getProperty("browser") != null ? System.getProperty("browser") : prop.getProperty("browser");
+		String browsername = System.getProperty("browser") != null ? System.getProperty("browser")
+				: prop.getProperty("browser");
 
 		if (browsername.equalsIgnoreCase("chrome")) {
-			
-			
-			System.setProperty("webdriver.chrome.driver","./Drivers\\chromedriver.exe");
+
+			System.setProperty("webdriver.chrome.driver", "./Drivers\\chromedriver.exe");
 			driver = new ChromeDriver();
 
 		}
@@ -62,8 +63,17 @@ public class BaseClass {
 		else if (browsername.equalsIgnoreCase("firefox"))
 
 		{
-			System.setProperty("webdriver.gecko.driver","./Drivers\\geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", "./Drivers\\geckodriver.exe");
 			driver = new FirefoxDriver();
+
+		}
+
+		else
+
+		{
+
+			System.setProperty("webdriver.edge.driver", "./Drivers\\msedgedriver.exe");
+			driver = new EdgeDriver();
 
 		}
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
