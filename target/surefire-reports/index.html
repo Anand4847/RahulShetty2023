@@ -5,8 +5,9 @@
   <meta charset='utf-8'>
   <title>TestNG reports</title>
 
-    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
-    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type='text/javascript'>
@@ -23,6 +24,7 @@
   <body>
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
       <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
@@ -102,12 +104,12 @@
                     <div class="method-list-content skipped suite-Suite">
                       <span>
                         <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="TestCases.Framework" class="method navigator-link" hash-for-method="submitorder">submitorder</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="TestCases.Framework" class="method navigator-link" hash-for-method="submitorder({password=Test@123, product=IPHONE 13 PRO, email=anandsoni@test.com})">submitorder({password=Test@123, product=IPHONE 13 PRO, email=anandsoni@test.com})</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="TestCases.Framework" class="method navigator-link" hash-for-method="submitorder">submitorder</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="TestCases.Framework" class="method navigator-link" hash-for-method="submitorder({password=Sameer@123, product=ZARA COAT 3, email=sameer@test.com})">submitorder({password=Sameer@123, product=ZARA COAT 3, email=sameer@test.com})</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content skipped suite-Suite -->
@@ -130,41 +132,109 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="submitorder">
-                  </a> <!-- submitorder -->
+                  <a name="submitorder({password=Test@123, product=IPHONE 13 PRO, email=anandsoni@test.com})">
+                  </a> <!-- submitorder({password=Test@123, product=IPHONE 13 PRO, email=anandsoni@test.com}) -->
                   <span class="method-name">submitorder</span>
-                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: Expected browser binary location, but unable to find binary in default location, no &apos;moz:firefoxOptions.binary&apos; capability provided, and no binary flag set on the command line 
-Host info: host: &apos;ADMIN-PC&apos;, ip: &apos;192.168.1.102&apos;
+                  <span class="parameters">({password=Test@123, product=IPHONE 13 PRO, email=anandsoni@test.com})</span>
+                  <div class="stack-trace">org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
 Build info: version: &apos;4.8.0&apos;, revision: &apos;267030adea&apos;
-System info: os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;11.0.9&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: true, browserName: firefox, moz:debuggerAddress: true, moz:firefoxOptions: {}}], desiredCapabilities=Capabilities {acceptInsecureCerts: true, browserName: firefox, moz:debuggerAddress: true, moz:firefoxOptions: {}}}]
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:148)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:106)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:67)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:156)
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.9&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [6a4709c4075438c4edc65db02c2d7ce8, get {url=https://rahulshettyacademy.com/client/}]
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 110.0.1587.57, ms:edgeOptions: {debuggerAddress: localhost:51327}, msedge: {msedgedriverVersion: 109.0.1518.78 (4e4b32c38163..., userDataDir: C:\Users\admin\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51327/devtoo..., se:cdpVersion: 110.0.1587.57, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 6a4709c4075438c4edc65db02c2d7ce8
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:297)
+	at PageObjects.LoginPage.gotourl(LoginPage.java:71)
+	at BaseComponent.BaseClass.launchapplication(BaseClass.java:161)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+Caused by: java.io.UncheckedIOException: java.io.IOException: An existing connection was forcibly closed by the remote host
+	at org.openqa.selenium.remote.http.netty.NettyHttpHandler.makeCall(NettyHttpHandler.java:73)
+	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:56)
+	at org.openqa.selenium.remote.http.netty.NettyHttpHandler.execute(NettyHttpHandler.java:49)
+	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:56)
+	at org.openqa.selenium.remote.http.netty.NettyClient.execute(NettyClient.java:99)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:181)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:229)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:157)
-	at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:130)
-	at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:111)
-	at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:101)
-	at BaseComponent.BaseClass.initializedriver(BaseClass.java:66)
-	at BaseComponent.BaseClass.launchapplication(BaseClass.java:108)
-... Removed 31 stack frames
+	... 39 more
+Caused by: java.io.IOException: An existing connection was forcibly closed by the remote host
+	at java.base/sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at java.base/sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at java.base/sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:276)
+	at java.base/sun.nio.ch.IOUtil.read(IOUtil.java:233)
+	at java.base/sun.nio.ch.IOUtil.read(IOUtil.java:223)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:358)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:259)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+... Removed 35 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="submitorder">
-                  </a> <!-- submitorder -->
+                  <a name="submitorder({password=Sameer@123, product=ZARA COAT 3, email=sameer@test.com})">
+                  </a> <!-- submitorder({password=Sameer@123, product=ZARA COAT 3, email=sameer@test.com}) -->
                   <span class="method-name">submitorder</span>
-                  <div class="stack-trace">java.lang.NullPointerException
-	at BaseComponent.BaseClass.tearDown(BaseClass.java:121)
-... Removed 31 stack frames
+                  <span class="parameters">({password=Sameer@123, product=ZARA COAT 3, email=sameer@test.com})</span>
+                  <div class="stack-trace">org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
+Build info: version: &apos;4.8.0&apos;, revision: &apos;267030adea&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.9&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [6a4709c4075438c4edc65db02c2d7ce8, get {url=https://rahulshettyacademy.com/client/}]
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 110.0.1587.57, ms:edgeOptions: {debuggerAddress: localhost:51327}, msedge: {msedgedriverVersion: 109.0.1518.78 (4e4b32c38163..., userDataDir: C:\Users\admin\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51327/devtoo..., se:cdpVersion: 110.0.1587.57, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 6a4709c4075438c4edc65db02c2d7ce8
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:297)
+	at PageObjects.LoginPage.gotourl(LoginPage.java:71)
+	at BaseComponent.BaseClass.launchapplication(BaseClass.java:161)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+Caused by: java.io.UncheckedIOException: java.io.IOException: An existing connection was forcibly closed by the remote host
+	at org.openqa.selenium.remote.http.netty.NettyHttpHandler.makeCall(NettyHttpHandler.java:73)
+	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:56)
+	at org.openqa.selenium.remote.http.netty.NettyHttpHandler.execute(NettyHttpHandler.java:49)
+	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:56)
+	at org.openqa.selenium.remote.http.netty.NettyClient.execute(NettyClient.java:99)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:181)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	... 39 more
+Caused by: java.io.IOException: An existing connection was forcibly closed by the remote host
+	at java.base/sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at java.base/sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at java.base/sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:276)
+	at java.base/sun.nio.ch.IOUtil.read(IOUtil.java:233)
+	at java.base/sun.nio.ch.IOUtil.read(IOUtil.java:223)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:358)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:259)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+... Removed 35 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -178,16 +248,16 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;TestCases.Listeners&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Submit run&quot; verbose=&quot;0&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Submitrun&quot; verbose=&quot;0&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;TestCases.Framework&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Submit run --&gt;
+  &lt;/test&gt; &lt;!-- Submitrun --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -199,7 +269,7 @@ Command: [null, newSession {capabilities=[Capabilities {acceptInsecureCerts: tru
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Submit run (1 class)</span>
+                <span class="test-name">Submitrun (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -273,37 +343,32 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">launchapplication</span>
-                <span class="method-start">555 ms</span>
+                <span class="method-start">577 ms</span>
               </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">submitorder({password=Test@123, product=IPHONE 13 PRO, email=anandsoni@test.com})</span>
+                <span class="method-start">18051 ms</span>
+              </div> <!-- test-method -->
               <div class="configuration-method after">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">tearDown</span>
-                <span class="method-start">2925 ms</span>
+                <span class="method-start">18057 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">launchapplication</span>
-                <span class="method-start">2926 ms</span>
+                <span class="method-start">22124 ms</span>
               </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">submitorder({password=Sameer@123, product=ZARA COAT 3, email=sameer@test.com})</span>
+                <span class="method-start">33685 ms</span>
+              </div> <!-- test-method -->
               <div class="configuration-method after">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">tearDown</span>
-                <span class="method-start">3678 ms</span>
+                <span class="method-start">33701 ms</span>
               </div> <!-- configuration-method after -->
-              <div class="test-method">
-                <span class="method-name">submitorder</span>
-                <span class="method-start">-1677247093097 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">submitorder</span>
-                <span class="method-start">-1677247093097 ms</span>
-              </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
     </div> <!-- wrapper -->
   </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
 </html>

@@ -3,12 +3,11 @@
 <suite name="Suite" >
 
 	<listeners>
-
 		<listener class-name="TestCases.Listeners" />
 	</listeners>
 
 
-	<test thread-count="5" name="Submit run">
+	<test thread-count="5" name="Submitrun">
 		<classes>
 			<class name="TestCases.Framework" />
 		</classes>
